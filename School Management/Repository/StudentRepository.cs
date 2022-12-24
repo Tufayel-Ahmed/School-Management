@@ -4,7 +4,6 @@ using Microsoft.VisualBasic;
 using School_Management.Data;
 using School_Management.Interface_Repository;
 using School_Management.Models;
-using System.Linq;
 
 namespace School_Management.Repository
 {
