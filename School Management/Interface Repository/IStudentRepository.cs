@@ -9,6 +9,8 @@ namespace School_Management.Interface_Repository
 
         Task<Student> GetStudentById(int id);
 
+        //Task<List<Standard>> GetTeacherInfo();
+
         Task<Student> AddStudent(Student student);
 
         Task<Student> DeleteStudent(int id);

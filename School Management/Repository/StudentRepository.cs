@@ -4,6 +4,7 @@ using Microsoft.VisualBasic;
 using School_Management.Data;
 using School_Management.Interface_Repository;
 using School_Management.Models;
+using System.Linq;
 
 namespace School_Management.Repository
 {
@@ -45,5 +46,19 @@ namespace School_Management.Repository
             }
             return student!;
         }
+
+        /*public async Task<List<Standard>> GetTeacherInfo()
+        {
+            var teacherInfo = await _schoolDbContext.Standards.Join(
+                _schoolDbContext.Teachers, standard => 
+                standard.StandardId, teacher => 
+                teacher.StandardId, (s, t) => 
+                new { 
+                    Standard_Name = s.StandardName, 
+                    Teacher_First_Name = t.FirstName, 
+                    Teacher_Last_Name = t.LastName 
+                }).ToListAsync();
+            return teacherInfo;
+        }*/
     }
 }
