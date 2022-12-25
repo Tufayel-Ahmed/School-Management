@@ -17,7 +17,7 @@ namespace School_Management.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllStudents()
+        public async Task<IActionResult> GetStudents()
         {
             try
             {

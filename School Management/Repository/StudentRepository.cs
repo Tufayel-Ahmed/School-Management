@@ -16,6 +16,7 @@ namespace School_Management.Repository
             _schoolDbContext = schoolDbContext;
         }
 
+        //Student
         public async Task<List<Student>> GetStudents()
         {
             var students =  await _schoolDbContext.Students.ToListAsync();
@@ -58,6 +59,6 @@ namespace School_Management.Repository
                     Teacher_Last_Name = t.LastName 
                 }).ToListAsync();
             return teacherInfo;
-        }*/
+        }*/   
     }
 }
