@@ -16,10 +16,9 @@ namespace School_Management.Repository
             _schoolDbContext = schoolDbContext;
         }
 
-        //Student
         public async Task<List<Student>> GetStudents()
         {
-            var students =  await _schoolDbContext.Students.ToListAsync();
+            var students =  await _schoolDbContext.Students.OrderBy(s => s.FirstName).ThenBy(s => s.LastName).ToListAsync();
             return students;
         }
 
@@ -45,20 +44,6 @@ namespace School_Management.Repository
                 await _schoolDbContext.SaveChangesAsync();
             }
             return student!;
-        }
-
-        /*public async Task<List<Standard>> GetTeacherInfo()
-        {
-            var teacherInfo = await _schoolDbContext.Standards.Join(
-                _schoolDbContext.Teachers, standard => 
-                standard.StandardId, teacher => 
-                teacher.StandardId, (s, t) => 
-                new { 
-                    Standard_Name = s.StandardName, 
-                    Teacher_First_Name = t.FirstName, 
-                    Teacher_Last_Name = t.LastName 
-                }).ToListAsync();
-            return teacherInfo;
-        }*/   
+        }  
     }
 }

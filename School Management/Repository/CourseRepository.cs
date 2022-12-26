@@ -15,7 +15,7 @@ namespace School_Management.Repository
         }
         public async Task<List<Course>> GetCourses()
         {
-            var courses = await _schoolDbContext.Courses.ToListAsync();
+            var courses = await _schoolDbContext.Courses.OrderByDescending(c => c.CourseName).ToListAsync();
             return courses;
         }
 

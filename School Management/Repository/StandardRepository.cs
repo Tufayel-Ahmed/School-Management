@@ -15,7 +15,7 @@ namespace School_Management.Repository
         }
         public async Task<List<Standard>> GetStandards()
         {
-            var standards = await _schoolDbContext.Standards.ToListAsync();
+            var standards = await _schoolDbContext.Standards.OrderBy(s => s.StandardName).ThenByDescending(s => s.StandardId).ToListAsync();
             return standards;
         }
 

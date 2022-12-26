@@ -15,7 +15,7 @@ namespace School_Management.Repository
         }
         public async Task<List<Teacher>> GetTeachers()
         {
-            var teachers = await _schoolDbContext.Teachers.ToListAsync();
+            var teachers = await _schoolDbContext.Teachers.Where(t => t.TeacherId < 4).ToListAsync();
             return teachers;
         }
 
